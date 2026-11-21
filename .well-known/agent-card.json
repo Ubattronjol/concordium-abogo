@@ -1,0 +1,96 @@
+{
+  "name": "abogo",
+  "description": "abogo is an autonomous AI agent that hunts gas-only free NFT mints on BNB Chain and mints them only when they pass strict safety gates: Sourcify exact_match source verification, a drain-pattern source scan, and a market gate. It holds 92 NFTs in its agent wallet. On Concordium testnet it carries a Verified by Concordium badge, an Agent Registry entry, and an ERC-8004 Agent Card, and it pays and charges for mint signals via x402.",
+  "url": "https://ubattronjol.github.io/concordium-abogo/.well-known/agent-card.json",
+  "version": "0.1.0",
+  "defaultInputModes": [
+    "text/markdown",
+    "application/json"
+  ],
+  "defaultOutputModes": [
+    "text/markdown",
+    "application/json"
+  ],
+  "authentication": {
+    "schemes": []
+  },
+  "skills": [
+    {
+      "id": "free-mint-hunt",
+      "name": "Find gas-only free NFT mints",
+      "description": "Scans BNB Chain for free-mint NFT contracts and returns candidates with supply, price, and mint-window data.",
+      "tags": [
+        "bsc",
+        "free-mint",
+        "nft",
+        "discovery"
+      ]
+    },
+    {
+      "id": "safety-gate",
+      "name": "Verify a mint before touching it",
+      "description": "Runs the full safety gate on a candidate: Sourcify exact_match source verification, drain-pattern source scan, and market gate.",
+      "tags": [
+        "security",
+        "verification",
+        "sourcify",
+        "drain-scan"
+      ]
+    },
+    {
+      "id": "mint-signal",
+      "name": "Publish a verified mint signal",
+      "description": "Returns the latest verified free-mint signal: contract, token, gate verdict, and expiry. Paid per call via x402.",
+      "tags": [
+        "signal",
+        "mint",
+        "verified",
+        "x402"
+      ]
+    },
+    {
+      "id": "price-watch",
+      "name": "Track highest sale prices",
+      "description": "Tracks the highest verified marketplace sale price per owned collection.",
+      "tags": [
+        "price",
+        "sales",
+        "tracking"
+      ]
+    }
+  ],
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "extensions": [
+      {
+        "uri": "https://docs.concordium.com/a2a-extensions/concordium-badge/v1",
+        "description": "Verified by Concordium badge — on-chain agent identity in a CIS-8004 registry",
+        "required": false,
+        "params": {
+          "tokenAddress": null,
+          "owner": {
+            "account": "ccd:4221332d34e1694168c2a0c0b3fd0f27:4cLPgWjrEecJnH4uPExRX8fvHhpkjWVoKbYFkrEXVwfW5mzACC"
+          },
+          "agentWallet": "ccd:4221332d34e1694168c2a0c0b3fd0f27:4cLPgWjrEecJnH4uPExRX8fvHhpkjWVoKbYFkrEXVwfW5mzACC",
+          "contracts": {
+            "cis8004": "ccd:4221332d34e1694168c2a0c0b3fd0f27:12802.0",
+            "cis8": "ccd:4221332d34e1694168c2a0c0b3fd0f27:12801.0"
+          },
+          "verify": "Resolve tokenAddress via CIS-8004 agent_of; confirm owner + status=Active + card SHA-256 == metadata_hash.",
+          "verification": {
+            "service": "Concordium Agent Registry",
+            "verifyUrl": "https://agent-registry-mcp.concordium.com/v1/badge-check/4cLPgWjrEecJnH4uPExRX8fvHhpkjWVoKbYFkrEXVwfW5mzACC",
+            "mcp": "https://agent-registry-mcp.concordium.com/mcp",
+            "docs": "https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html"
+          }
+        }
+      }
+    ]
+  },
+  "provider": {
+    "organization": "abogo",
+    "url": "https://www.encodeclub.com/programmes/concordium-trusted-agents-hackathon"
+  },
+  "documentationUrl": "https://github.com/Ubattronjol/concordium-abogo#readme"
+}

@@ -1,0 +1,11 @@
+# Secrets — NEVER commit these. Testnet keys have no monetary value, but the
+# same files must never hold mainnet keys.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*-secret*.json
+wallet/
+secrets/
+node_modules/

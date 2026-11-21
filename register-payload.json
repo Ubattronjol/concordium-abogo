@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"network\": \"testnet\",\n  \"contract_address\": {\n    \"index\": 12802,\n    \"subindex\": 0\n  },\n  \"receive_name\": \"CIS-8004.register\",\n  \"parameter_json\": {\n    \"agent_uri\": {\n      \"Some\": [\n        \"https://ubattronjol.github.io/concordium-abogo/.well-known/agent-card.json\"\n      ]\n    },\n    \"metadata_hash\": {\n      \"Some\": [\n        [\n          118,\n          179,\n          212,\n          88,\n          188,\n          226,\n          133,\n          96,\n          115,\n          98,\n          150,\n          116,\n          16,\n          167,\n          128,\n          76,\n          171,\n          80,\n          62,\n          188,\n          55,\n          133,\n          245,\n          38,\n          70,\n          189,\n          27,\n          64,\n          217,\n          117,\n          186,\n          0\n        ]\n      ]\n    },\n    \"external_reference\": {\n      \"None\": []\n    },\n    \"initial_metadata\": []\n  },\n  \"parameter_hex\": \"014a00000068747470733a2f2f7562617474726f6e6a6f6c2e6769746875622e696f2f636f6e636f726469756d2d61626f676f2f2e77656c6c2d6b6e6f776e2f6167656e742d636172642e6a736f6e0176b3d458bce285607362967410a7804cab503ebc3785f52646bd1b40d975ba000000000000\",\n  \"suggested_energy\": 30000,\n  \"sender\": \"4cLPgWjrEecJnH4uPExRX8fvHhpkjWVoKbYFkrEXVwfW5mzACC\"\n}"
+      }
+    ],
+    "isError": false
+  }
+}
